@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/pergunta">
+
+    <fragment
+        android:id="@+id/pergunta"
+        android:name="com.example.quizandroid_app.Pergunta"
+        android:label="fragment_pergunta"
+        tools:layout="@layout/fragment_pergunta" >
+        <action
+            android:id="@+id/action_pergunta_self"
+            app:destination="@id/pergunta" />
+        <action
+            android:id="@+id/action_pergunta_to_resultadoFragment"
+            app:destination="@id/resultadoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultadoFragment"
+        android:name="com.example.quizandroid_app.ResultadoFragment"
+        android:label="fragment_resultado"
+        tools:layout="@layout/fragment_resultado" />
+</navigation>
