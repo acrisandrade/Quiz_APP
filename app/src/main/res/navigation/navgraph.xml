@@ -2,24 +2,36 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navgraph"
-    app:startDestination="@id/pergunta">
+    app:startDestination="@id/pergunta1Fragment"
+    android:id="@+id/navgraph">
 
     <fragment
-        android:id="@+id/pergunta"
-        android:name="com.example.quizandroid_app.Pergunta"
-        android:label="fragment_pergunta"
-        tools:layout="@layout/fragment_pergunta" >
-        <action
-            android:id="@+id/action_pergunta_self"
-            app:destination="@id/pergunta" />
-        <action
-            android:id="@+id/action_pergunta_to_resultadoFragment"
-            app:destination="@id/resultadoFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/resultadoFragment"
-        android:name="com.example.quizandroid_app.ResultadoFragment"
+        android:name="com.example.quizandroid_app.ui.ResultadoFragment"
         android:label="fragment_resultado"
         tools:layout="@layout/fragment_resultado" />
+    <fragment
+        android:id="@+id/pergunta2Fragment"
+        android:name="com.example.quizandroid_app.ui.Pergunta2Fragment"
+        android:label="fragment_pergunta2"
+        tools:layout="@layout/fragment_pergunta2" >
+        <action
+            android:id="@+id/action_pergunta2Fragment_to_pergunta3Fragment"
+            app:destination="@id/pergunta3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pergunta3Fragment"
+        android:name="com.example.quizandroid_app.ui.Pergunta3Fragment"
+        android:label="fragment_pergunta3"
+        tools:layout="@layout/fragment_pergunta3" />
+    <fragment
+        android:id="@+id/pergunta1Fragment"
+        android:name="com.example.quizandroid_app.ui.Pergunta1Fragment"
+        android:label="fragment_pergunta1"
+        tools:layout="@layout/fragment_pergunta1" >
+        <action
+            android:id="@+id/action_pergunta1Fragment_to_pergunta2Fragment"
+            app:destination="@id/pergunta2Fragment" />
+    </fragment>
+
 </navigation>
