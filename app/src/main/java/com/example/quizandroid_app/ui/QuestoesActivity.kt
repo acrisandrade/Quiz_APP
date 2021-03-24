@@ -18,15 +18,11 @@ class QuestoesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questoes)
-        //val vm: QuizViewModel by viewModels()
-        //vm.setQuestoes()
-        //Log.i("Demo", "${vm.ListaQuestoes.value!!.size}")
         val nomeJogador = intent.getStringExtra("nickName")
         jogadorViewModel.setarNome(nomeJogador!!)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
         navController = navHostFragment.navController
         Activity.RESULT_OK
-        Log.i("asdf", "VEIO ${jogadorViewModel.nickname.value}")
     }
 }

@@ -6,10 +6,15 @@
     android:id="@+id/navgraph">
 
     <fragment
-        android:id="@+id/resultadoFragment"
-        android:name="com.example.quizandroid_app.ui.ResultadoFragment"
-        android:label="fragment_resultado"
-        tools:layout="@layout/fragment_resultado" />
+        android:id="@+id/pergunta1Fragment"
+        android:name="com.example.quizandroid_app.ui.Pergunta1Fragment"
+        android:label="fragment_pergunta1"
+        tools:layout="@layout/fragment_pergunta1" >
+        <action
+            android:id="@+id/action_pergunta1Fragment_to_pergunta2Fragment"
+            app:destination="@id/pergunta2Fragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/pergunta2Fragment"
         android:name="com.example.quizandroid_app.ui.Pergunta2Fragment"
@@ -23,15 +28,52 @@
         android:id="@+id/pergunta3Fragment"
         android:name="com.example.quizandroid_app.ui.Pergunta3Fragment"
         android:label="fragment_pergunta3"
-        tools:layout="@layout/fragment_pergunta3" />
-    <fragment
-        android:id="@+id/pergunta1Fragment"
-        android:name="com.example.quizandroid_app.ui.Pergunta1Fragment"
-        android:label="fragment_pergunta1"
-        tools:layout="@layout/fragment_pergunta1" >
+        tools:layout="@layout/fragment_pergunta3" >
         <action
-            android:id="@+id/action_pergunta1Fragment_to_pergunta2Fragment"
-            app:destination="@id/pergunta2Fragment" />
+            android:id="@+id/action_pergunta3Fragment_to_questao4Fragment"
+            app:destination="@id/questao4Fragment" />
     </fragment>
+    <fragment
+        android:id="@+id/questao4Fragment"
+        android:name="com.example.quizandroid_app.ui.Pergunta4Fragment"
+        android:label="fragment_questao4"
+        tools:layout="@layout/fragment_questao4" >
+        <action
+            android:id="@+id/action_questao4Fragment_to_pergunta5Fragment"
+            app:destination="@id/pergunta5Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pergunta5Fragment"
+        android:name="com.example.quizandroid_app.ui.Pergunta5Fragment"
+        android:label="fragment_pergunta5"
+        tools:layout="@layout/fragment_pergunta5" >
+        <action
+            android:id="@+id/action_pergunta5Fragment_to_pergunta6Fragment"
+            app:destination="@id/pergunta6Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pergunta6Fragment"
+        android:name="com.example.quizandroid_app.ui.Pergunta6Fragment"
+        android:label="fragment_pergunta6"
+        tools:layout="@layout/fragment_pergunta6" >
+        <action
+            android:id="@+id/action_pergunta6Fragment_to_pergunta7Fragment"
+            app:destination="@id/pergunta7Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pergunta7Fragment"
+        android:name="com.example.quizandroid_app.ui.Pergunta7Fragment"
+        android:label="fragment_pergunta7"
+        tools:layout="@layout/fragment_pergunta7" >
+        <action
+            android:id="@+id/action_pergunta7Fragment_to_resultadoFragment"
+            app:destination="@id/resultadoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultadoFragment"
+        android:name="com.example.quizandroid_app.ui.ResultadoFragment"
+        android:label="fragment_resultado"
+        tools:layout="@layout/fragment_resultado" />
+
 
 </navigation>

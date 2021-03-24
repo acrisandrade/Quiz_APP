@@ -22,14 +22,11 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Insira um NickName", Toast.LENGTH_LONG)
                     .show()
             }else{
-                //jogadorViewModel.setarNome(editTextTextPersonName.text.toString())
-               // Toast.makeText(this, "${jogadorViewModel.nickname.value}", Toast.LENGTH_SHORT).show()
 
                 val comecar = Intent(this, QuestoesActivity::class.java)
                 comecar.putExtra("nickName", editTextTextPersonName.text.toString())
                 startActivity(comecar)
-//                val params = Bundle()
-//                val dados = JogadorViewModel
+
             }
         }
     }
