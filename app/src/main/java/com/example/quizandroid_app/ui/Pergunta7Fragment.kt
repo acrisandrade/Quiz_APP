@@ -1,6 +1,7 @@
 package com.example.quizandroid_app.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import com.example.quizandroid_app.QuizViewModel
 import com.example.quizandroid_app.R
 import com.example.quizandroid_app.model.Gabarito
 import kotlinx.android.synthetic.main.fragment_pergunta1.*
+import java.util.logging.Level.INFO
 
 
 class Pergunta7Fragment : Fragment() {

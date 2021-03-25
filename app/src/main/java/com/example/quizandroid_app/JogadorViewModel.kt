@@ -7,12 +7,14 @@ import com.example.quizandroid_app.model.Jogador
 import com.example.quizandroid_app.model.ListaRankingJogadores
 
 class JogadorViewModel : ViewModel() {
+    var endGame=  MutableLiveData(false)
     private val _nickname = MutableLiveData<String>()
     private val _ranking = MutableLiveData(ListaRankingJogadores().ranking)
     var pontuacao = MutableLiveData<Int>()
 
     init {
         pontuacao.value = 0
+
     }
 
     fun getRakingOrdenado(): List<Jogador> {
@@ -35,5 +37,6 @@ class JogadorViewModel : ViewModel() {
     fun adcionarPontos(pontos: Int) {
         pontuacao.value =  pontuacao.value?.plus(pontos)
     }
+
 
 }

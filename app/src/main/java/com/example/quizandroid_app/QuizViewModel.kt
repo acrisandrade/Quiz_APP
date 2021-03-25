@@ -10,5 +10,4 @@ class QuizViewModel : ViewModel() {
 
     val ListaQuestoes : LiveData<List<Gabarito>>
     get() = _ListaQuestoes
-
-}
+    }

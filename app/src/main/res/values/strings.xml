@@ -6,4 +6,8 @@
     <string name="nick_name">Nick Name</string>
     <string name="textview">Olá</string>
     <string name="share">Compartilhe com seus amigos sua pontuação</string>
+    <string name="ranking">Ranking</string>
+    <string name="title">Quiz</string>
+    <string name="nomejogador">TextView</string>
+    <string name="pontuacaojogador">TextView</string>
 </resources>

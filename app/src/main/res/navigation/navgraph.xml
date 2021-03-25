@@ -11,6 +11,8 @@
         android:label="fragment_pergunta1"
         tools:layout="@layout/fragment_pergunta1" >
         <action
+            app:popUpTo="@id/pergunta1Fragment"
+            app:popUpToInclusive="true"
             android:id="@+id/action_pergunta1Fragment_to_pergunta2Fragment"
             app:destination="@id/pergunta2Fragment" />
     </fragment>
@@ -21,6 +23,8 @@
         android:label="fragment_pergunta2"
         tools:layout="@layout/fragment_pergunta2" >
         <action
+            app:popUpTo="@id/pergunta2Fragment"
+            app:popUpToInclusive="true"
             android:id="@+id/action_pergunta2Fragment_to_pergunta3Fragment"
             app:destination="@id/pergunta3Fragment" />
     </fragment>
@@ -30,6 +34,8 @@
         android:label="fragment_pergunta3"
         tools:layout="@layout/fragment_pergunta3" >
         <action
+            app:popUpTo="@id/pergunta3Fragment"
+            app:popUpToInclusive="true"
             android:id="@+id/action_pergunta3Fragment_to_questao4Fragment"
             app:destination="@id/questao4Fragment" />
     </fragment>
@@ -39,6 +45,8 @@
         android:label="fragment_questao4"
         tools:layout="@layout/fragment_questao4" >
         <action
+            app:popUpTo="@id/questao4Fragment"
+            app:popUpToInclusive="true"
             android:id="@+id/action_questao4Fragment_to_pergunta5Fragment"
             app:destination="@id/pergunta5Fragment" />
     </fragment>
@@ -48,6 +56,8 @@
         android:label="fragment_pergunta5"
         tools:layout="@layout/fragment_pergunta5" >
         <action
+            app:popUpTo="@id/pergunta5Fragment"
+            app:popUpToInclusive="true"
             android:id="@+id/action_pergunta5Fragment_to_pergunta6Fragment"
             app:destination="@id/pergunta6Fragment" />
     </fragment>
@@ -57,6 +67,8 @@
         android:label="fragment_pergunta6"
         tools:layout="@layout/fragment_pergunta6" >
         <action
+            app:popUpTo="@id/pergunta6Fragment"
+            app:popUpToInclusive="true"
             android:id="@+id/action_pergunta6Fragment_to_pergunta7Fragment"
             app:destination="@id/pergunta7Fragment" />
     </fragment>
@@ -66,6 +78,8 @@
         android:label="fragment_pergunta7"
         tools:layout="@layout/fragment_pergunta7" >
         <action
+            app:popUpTo="@id/pergunta7Fragment"
+            app:popUpToInclusive="true"
             android:id="@+id/action_pergunta7Fragment_to_resultadoFragment"
             app:destination="@id/resultadoFragment" />
     </fragment>
@@ -73,7 +87,12 @@
         android:id="@+id/resultadoFragment"
         android:name="com.example.quizandroid_app.ui.ResultadoFragment"
         android:label="fragment_resultado"
-        tools:layout="@layout/fragment_resultado" />
+        tools:layout="@layout/fragment_resultado" >
+    <action
+        android:id="@+id/fim"
+        app:popUpTo="@id/resultadoFragment"
+        app:popUpToInclusive="true"/>
+    </fragment>
 
 
 </navigation>

@@ -1,40 +1,56 @@
 package com.example.quizandroid_app.ui
 
 import android.content.Intent
+import android.content.res.Resources
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Canvas
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quizandroid_app.JogadorViewModel
 import com.example.quizandroid_app.R
 import com.example.quizandroid_app.adapter.RankingRecyclerAdapter
-import com.example.quizandroid_app.model.Jogador
-import com.example.quizandroid_app.model.ListaRankingJogadores
+import kotlinx.android.synthetic.main.activity_questoes.*
 import kotlinx.android.synthetic.main.fragment_resultado.*
+import kotlinx.android.synthetic.main.resultado_jogador.*
+import java.lang.reflect.Type
+
 
 class ResultadoFragment : Fragment() {
 
     private val jogadorViewModel: JogadorViewModel by activityViewModels()
     private lateinit var rankingJogadores: RecyclerView
+    private lateinit var ViewModel:JogadorViewModel
+
+
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_resultado, container, false)
 
+        jogadorViewModel.endGame.value = true
+        val view = inflater.inflate(R.layout.fragment_resultado, container, false)
         val adapter = RankingRecyclerAdapter(jogadorViewModel.getRakingOrdenado())
         rankingJogadores = view.findViewById(R.id.lista_resultado_jogador)
         rankingJogadores.adapter = adapter
+
+
         return view
+
     }
-
-
-    // TODO: 17/03/2021 Intent Implicita (Compartilhar resultados)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -43,6 +59,7 @@ class ResultadoFragment : Fragment() {
         imageButton3.setOnClickListener { it -> (compartilhar(it)) }
 
     }
+
     fun compartilhar(view: View){
         val sendIntent = Intent().apply {
             action = Intent.ACTION_SEND
@@ -53,5 +70,13 @@ class ResultadoFragment : Fragment() {
             startActivity(sendIntent)
         }
     }
-
 }
+
+
+
+
+
+
+
+
+
